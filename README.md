@@ -11,3 +11,8 @@ poetry run black .
 ```
 poetry run pytest
 ```
+
+## Launch
+```
+python run.py
+```

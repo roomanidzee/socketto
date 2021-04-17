@@ -44,7 +44,7 @@ def edit_document(ident, content):
 
     doc = all_docs[ident]
 
-    doc["content"] = doc["content"] + " " + content
+    doc["content"] = content
     doc["update_time"] = int(time.time())
 
     all_docs[ident] = doc

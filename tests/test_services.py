@@ -21,7 +21,7 @@ def test_edit():
     editted_doc = get_document(edit_doc_id)
 
     assert editted_doc["id"] == edit_doc_id
-    assert editted_doc["content"] == "edit_doc new_content"
+    assert editted_doc["content"] == "new_content"
 
 
 def test_document_retrieve():
