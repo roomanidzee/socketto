@@ -39,4 +39,5 @@ jobs:
         heroku_api_key: ${{secrets.HEROKU_API_KEY}}
         heroku_app_name: "socketto"
         heroku_email: "steampart@gmail.com"
+        branch: "master"
         buildpack: "https://github.com/moneymeets/python-poetry-buildpack.git"
