@@ -18,14 +18,25 @@ jobs:
     steps:
     - name: Code checkout
       uses: actions/checkout@v2
+
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
         python-version: ${{ matrix.python-version }}
+
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
         pip install poetry==1.1.6
         poetry install
+
     - name: Run tests
       run: poetry run pytest
+
+    - name: Deploy to Heroku
+      uses: akhileshns/heroku-deploy@v3.12.12
+      with:
+        heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+        heroku_app_name: "socketto"
+        heroku_email: "steampart@gmail.com"
+        buildpack: "https://github.com/moneymeets/python-poetry-buildpack.git"
