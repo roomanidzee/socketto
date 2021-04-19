@@ -25,7 +25,7 @@ def on_create(content):
     document_id = create_document(content)
     join_room(document_id)
 
-    emit("document", get_document(document_id), room=document_id, json=True)
+    emit("document", get_document(document_id), broadcast=True, json=True)
 
 
 @ws.on("edit")
@@ -36,4 +36,4 @@ def on_edit(ident, content):
 
     edit_document(ident, content)
 
-    emit("edit", get_document(ident), room=my_rooms[-1], json=True)
+    emit("edit", get_document(ident), broadcast=True, include_self=False, json=True)
