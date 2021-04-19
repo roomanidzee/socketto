@@ -15,7 +15,7 @@ ws = SocketIO(app, cors_allowed_origins="*")
 
 
 @app.route("/document/<input_id>")
-def get_document(input_id):
+def get_document_info(input_id):
     return jsonify(get_document(input_id))
 
 
